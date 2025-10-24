@@ -6,7 +6,7 @@
 /*   By: kvolynsk <kvolynsk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/22 15:50:26 by kvolynsk      #+#    #+#                 */
-/*   Updated: 2025/10/23 15:08:32 by kvolynsk      ########   odam.nl         */
+/*   Updated: 2025/10/24 16:04:16 by kvolynsk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	move_though_list(t_list *new_node, t_list **current, t_list **lst)
 static t_list	*handle_failed_new_node(void (*del)(void *), void **new_content,
 		t_list **new_list)
 {
-	if (del)
+	if (del && *new_content)
 		del(*new_content);
 	ft_lstclear(new_list, del);
 	return (NULL);

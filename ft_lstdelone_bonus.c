@@ -6,7 +6,7 @@
 /*   By: kvolynsk <kvolynsk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/22 15:05:55 by kvolynsk      #+#    #+#                 */
-/*   Updated: 2025/10/22 15:16:16 by kvolynsk      ########   odam.nl         */
+/*   Updated: 2025/10/24 16:01:44 by kvolynsk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ the content
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!del || !lst)
-	{
+	if (!lst)
 		return ;
-	}
-	del(lst->content);
+	if (del)
+		del(lst->content);
 	free(lst);
 }

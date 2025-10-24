@@ -6,7 +6,7 @@
 /*   By: kvolynsk <kvolynsk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/22 15:17:12 by kvolynsk      #+#    #+#                 */
-/*   Updated: 2025/10/22 15:44:12 by kvolynsk      ########   odam.nl         */
+/*   Updated: 2025/10/24 16:02:43 by kvolynsk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,21 @@
 /**
  * @brief Deletes and frees the given node and all its
 successors
- * 
+ *
  * @param lst  The address of a pointer to a node
- * @param del 
+ * @param del
  */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (!del || !*lst)
-	{
+	if (lst)
 		return ;
-	}
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		del((*lst)->content);
+		if (del)
+			del((*lst)->content);
 		free(*lst);
 		*lst = tmp;
 	}

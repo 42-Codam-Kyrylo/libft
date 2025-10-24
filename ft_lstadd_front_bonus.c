@@ -6,7 +6,7 @@
 /*   By: kvolynsk <kvolynsk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/22 13:29:31 by kvolynsk      #+#    #+#                 */
-/*   Updated: 2025/10/22 13:54:59 by kvolynsk      ########   odam.nl         */
+/*   Updated: 2025/10/24 15:45:35 by kvolynsk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst || !new)
+		return ;
 	new->next = (*lst);
 	*lst = new;
 }
