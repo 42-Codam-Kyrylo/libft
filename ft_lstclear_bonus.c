@@ -6,7 +6,7 @@
 /*   By: kvolynsk <kvolynsk@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/22 15:17:12 by kvolynsk      #+#    #+#                 */
-/*   Updated: 2025/10/24 16:02:43 by kvolynsk      ########   odam.nl         */
+/*   Updated: 2025/10/24 16:13:57 by kvolynsk      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (lst)
+	if (!lst)
 		return ;
 	while (*lst)
 	{
