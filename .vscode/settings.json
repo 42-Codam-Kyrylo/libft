@@ -1,0 +1,7 @@
+{
+	"editor.defaultFormatter": "keyhr.42-c-format",
+	"files.associations": {
+		"stdlib.h": "c",
+		"functional": "c"
+	}
+}
